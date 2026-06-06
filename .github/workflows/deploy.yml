@@ -1,0 +1,30 @@
+
+
+on:
+  push:
+    branches: [ main ] # Change to master if your primary branch is master
+
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository
+        uses: actions/checkout@v4
+
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3 # Automatically detects package manager
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/configure-pages@v5
