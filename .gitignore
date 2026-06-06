@@ -1,0 +1,36 @@
+# dependencies
+node_modules/
+
+# build / production output
+dist/
+
+# Astro cache and generated files
+.astro/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables / secrets
+.env
+.env.production
+.env.development
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
