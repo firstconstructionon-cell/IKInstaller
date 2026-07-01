@@ -1,0 +1,41 @@
+---
+import kitchenHero from '../assets/kitchen_hero.png';
+---
+
+<section class="landing-section hero-section">
+  <div class="hero-grid container">
+    <div class="hero-content">
+      <span class="hero-tagline">Pricing Transparency</span>
+      <h1 class="hero-title">
+        Transparent Pricing.
+        <span>Unmatched Value.</span>
+      </h1>
+      <p class="hero-desc">
+        Premium kitchen installation shouldn't come with hidden fees. We align our starting rates with the baseline you already know, adding independent expertise and extra care.
+      </p>
+    </div>
+
+    <div class="hero-image-wrapper">
+      <div class="hero-img-container">
+        <img 
+          class="hero-img" 
+          src={kitchenHero.src} 
+          alt="Premium IKEA Kitchen showcase with quartz countertops and custom cabinetry" 
+          fetchpriority="high"
+        />
+      </div>
+      
+      <div class="quote-match-badge">
+        <div class="badge-header">
+          <div class="badge-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          IKEA Quote Match
+        </div>
+        <p class="badge-desc">
+          We honor the baseline price provided by IKEA for simple projects.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

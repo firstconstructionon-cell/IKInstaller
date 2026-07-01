@@ -1,0 +1,640 @@
+/* Landing Page Custom Section Styles */
+
+.landing-section {
+  padding: 100px 0;
+  font-family: var(--font-primary);
+}
+
+.landing-section.alt-bg {
+  background-color: var(--color-white);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-brand-dark);
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+
+.section-intro {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 650px;
+  margin: 16px auto 56px auto;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  padding: 80px 0 120px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-tagline {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #556677;
+  text-transform: uppercase;
+  background-color: #ebf3f7;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--color-brand-dark);
+  margin-bottom: 24px;
+}
+
+.hero-title span {
+  color: #778899;
+  display: block;
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin-bottom: 36px;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.hero-img-container {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+.hero-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.hero-img-container:hover .hero-img {
+  transform: scale(1.03);
+}
+
+/* Quote Match Overlap Card */
+.quote-match-badge {
+  position: absolute;
+  bottom: -30px;
+  left: -40px;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+  max-width: 300px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.badge-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-brand-dark);
+}
+
+.badge-icon {
+  width: 24px;
+  height: 24px;
+  background-color: rgba(46, 125, 50, 0.1);
+  color: #2e7d32;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.badge-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   The IKEA Quote Baseline Section
+   ========================================================================== */
+.baseline-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.baseline-card {
+  background-color: var(--color-white);
+  border-radius: 14px;
+  padding: 40px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.baseline-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+}
+
+.card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.baseline-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: #f1f5f9;
+  color: var(--color-brand-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.baseline-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-brand-dark);
+}
+
+.baseline-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.baseline-card-desc strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* Dark Card (Simple to Ask) */
+.baseline-card.dark-card {
+  background-color: var(--color-brand-dark);
+  color: var(--color-white);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.baseline-card.dark-card .baseline-card-title {
+  color: var(--color-white);
+}
+
+.baseline-card.dark-card .baseline-card-desc {
+  color: #cccccc;
+}
+
+.baseline-card.dark-card .baseline-card-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+}
+
+.btn-learn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-white);
+  color: var(--color-brand-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 6px;
+  width: fit-content;
+  margin-top: 24px;
+  transition: background-color var(--transition-smooth);
+}
+
+.btn-learn:hover {
+  background-color: #f1f5f9;
+}
+
+.dark-card-bg-icon {
+  position: absolute;
+  right: -30px;
+  bottom: -30px;
+  font-size: 10rem;
+  opacity: 0.03;
+  color: var(--color-white);
+  pointer-events: none;
+}
+
+/* Advantage Card (Horizontal layout) */
+.baseline-card.advantage-card {
+  background-color: #ebf3f7;
+  border: none;
+  grid-column: span 2;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  min-height: 240px;
+}
+
+.advantage-content {
+  flex: 1.2;
+}
+
+.advantage-img-wrapper {
+  flex: 0.8;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 200px;
+}
+
+.advantage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Shield Card (Zero Risk) */
+.warranty-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-brand-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+}
+
+.warranty-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Our Commitment Section
+   ========================================================================== */
+.commitment-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.commitment-quote {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-brand-dark);
+  margin-bottom: 36px;
+  font-style: italic;
+}
+
+.commitment-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.author-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+}
+
+.author-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+}
+
+.author-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   Choose Your Path to a New Kitchen Section
+   ========================================================================== */
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.path-card {
+  background-color: var(--color-white);
+  border-radius: 14px;
+  padding: 48px 36px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 460px;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.path-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+.path-card.dark-card {
+  background-color: var(--color-brand-dark);
+  color: var(--color-white);
+  border: none;
+}
+
+.path-card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.path-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  color: var(--color-brand-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+.path-card.dark-card .path-card-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+}
+
+.path-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-brand-dark);
+}
+
+.path-card.dark-card .path-card-title {
+  color: var(--color-white);
+}
+
+.path-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.path-card.dark-card .path-card-desc {
+  color: #cccccc;
+}
+
+.btn-select {
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+  background-color: #f8fafc;
+  color: var(--color-brand-dark);
+  transition: all var(--transition-smooth);
+  margin-top: 32px;
+  display: block;
+}
+
+.btn-select:hover {
+  background-color: #e2e8f0;
+}
+
+.path-card.dark-card .btn-select {
+  background-color: var(--color-white);
+  color: var(--color-brand-dark);
+  border: none;
+}
+
+.path-card.dark-card .btn-select:hover {
+  background-color: #f1f5f9;
+}
+
+/* ==========================================================================
+   Ready for a Transparent Quote? Section (CTA)
+   ========================================================================== */
+.cta-box {
+  background-color: var(--color-brand-dark);
+  color: var(--color-white);
+  border-radius: 16px;
+  padding: 64px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.cta-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cta-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+}
+
+.cta-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 24px;
+}
+
+.btn-cta-light {
+  display: inline-block;
+  background-color: var(--color-white);
+  color: var(--color-brand-dark);
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  width: fit-content;
+  transition: background-color var(--transition-smooth);
+}
+
+.btn-cta-light:hover {
+  background-color: #f1f5f9;
+}
+
+.cta-right {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cta-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.bullet-check {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(74, 222, 128, 0.1);
+  color: #4ade80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.bullet-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.bullet-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-white);
+  margin-bottom: 2px;
+}
+
+.bullet-desc {
+  font-size: 0.85rem;
+  color: #888888;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .hero-image-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .quote-match-badge {
+    left: 20px;
+  }
+  
+  .baseline-card.advantage-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .advantage-img-wrapper {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .path-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .path-card:last-child {
+    grid-column: span 2;
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .cta-box {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-section {
+    padding: 80px 0;
+  }
+  
+  .hero-title {
+    font-size: 2.75rem;
+  }
+  
+  .baseline-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .baseline-card.advantage-card {
+    grid-column: span 1;
+  }
+  
+  .path-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .path-card:last-child {
+    grid-column: span 1;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .cta-title {
+    font-size: 2.25rem;
+  }
+  
+  .quote-match-badge {
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,60 @@
+---
+// Base URL helper
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const resolveUrl = (path: string) => {
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  if (cleanPath === '/') {
+    return baseUrl === '' ? '/' : `${baseUrl}/`;
+  }
+  return `${baseUrl}${cleanPath}`;
+};
+---
+
+<section class="landing-section alt-bg" style="padding-top: 40px; padding-bottom: 100px;">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-left">
+        <h2 class="cta-title">Ready for a<br/>Transparent Quote?</h2>
+        <p class="cta-desc">
+          Book a no-obligation consultation today. We'll review your IKEA quote and show you exactly where we can add value.
+        </p>
+        <a href={resolveUrl('/contact')} class="btn-cta-light">Book a Consultation</a>
+      </div>
+
+      <div class="cta-right">
+        <!-- Bullet 1: Full Transparency -->
+        <div class="cta-bullet">
+          <div class="bullet-check">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div class="bullet-content">
+            <span class="bullet-title">Full Transparency</span>
+            <span class="bullet-desc">No hidden line items or "mystery" service fees.</span>
+          </div>
+        </div>
+
+        <!-- Bullet 2: Plumbing Included -->
+        <div class="cta-bullet">
+          <div class="bullet-check">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div class="bullet-content">
+            <span class="bullet-title">Plumbing Included</span>
+            <span class="bullet-desc">Standard connections are part of the baseline price.</span>
+          </div>
+        </div>
+
+        <!-- Bullet 3: Experienced Team -->
+        <div class="cta-bullet">
+          <div class="bullet-check">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div class="bullet-content">
+            <span class="bullet-title">Experienced Team</span>
+            <span class="bullet-desc">Specialized installers focused solely on IKEA systems.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
