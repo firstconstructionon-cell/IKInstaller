@@ -63,10 +63,10 @@ const serviceParam = Astro.url.searchParams.get('service') ?? '';
           <p class="contact-form-subtitle">Fill in your details below and we'll be in touch to schedule your free consultation.</p>
 
           <!-- Status messages (shown by JS) -->
-          <div id="form-success" class="form-status success" role="alert">
+          <div id="form-success" class="form-status success" role="alert" style="display: none;">
             ✓ Message sent! We'll get back to you within one business day.
           </div>
-          <div id="form-error" class="form-status error" role="alert">
+          <div id="form-error" class="form-status error" role="alert" style="display: none;">
             Something went wrong. Please try again or email us directly at ikeakitcheninstalller.ca@gmail.com
           </div>
 
@@ -186,9 +186,9 @@ const serviceParam = Astro.url.searchParams.get('service') ?? '';
 <script>
   // ── EmailJS configuration ─────────────────────────────────
   // Replace these three values with your own from emailjs.com
-  const EMAILJS_PUBLIC_KEY   = 'EMAILJS_PUBLIC_KEY';   // Your Public Key
-  const EMAILJS_SERVICE_ID   = 'EMAILJS_SERVICE_ID';   // e.g. service_abc123
-  const EMAILJS_TEMPLATE_ID  = 'EMAILJS_TEMPLATE_ID';  // e.g. template_xyz789
+  const EMAILJS_PUBLIC_KEY   = 'PPesJaSqTzpfrgnQ1';   // Your Public Key
+  const EMAILJS_SERVICE_ID   = 'service_1k5yvyh';   // e.g. service_abc123
+  const EMAILJS_TEMPLATE_ID  = 'template_e3mjg8p';  // e.g. template_xyz789
   // ─────────────────────────────────────────────────────────
 
   // Dynamically load the EmailJS browser SDK
