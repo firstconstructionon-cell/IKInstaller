@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/landing-page.css';
+---
+
+<Layout>
+  <section class="placeholder-page landing-section">
+    <div class="container">
+      <div class="placeholder-content">
+        <span class="hero-tagline">Fully Managed Remodel</span>
+        <h1 class="hero-title" style="text-align:center;">A Complete Transformation.<br/><span>Hands-Free.</span></h1>
+        <p class="section-intro">
+          From trade coordination and flooring to custom finishes and final inspection — we handle everything. Full details, timelines, and scope of work are coming soon.
+        </p>
+        <div class="placeholder-actions">
+          <a href="/quote" class="btn-cta-light-dark">Book a Consultation</a>
+          <a href="/" class="btn-secondary">← Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .placeholder-page {
+    min-height: calc(100vh - var(--header-height) - 300px);
+    display: flex;
+    align-items: center;
+  }
+
+  .placeholder-content {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .placeholder-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-cta-light-dark {
+    background-color: var(--color-brand-dark);
+    color: var(--color-white);
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-cta-light-dark:hover {
+    background-color: #333333;
+  }
+
+  .btn-secondary {
+    color: var(--color-text-muted);
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: 1px solid var(--color-border);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    color: var(--color-brand-dark);
+    border-color: var(--color-brand-dark);
+  }
+</style>

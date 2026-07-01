@@ -278,5 +278,12 @@
 
   .mobile-toggle {
     display: block;
+    order: -1; /* ensures it sits before the brand in flex */
+  }
+
+  /* Push brand to center using auto margins */
+  .brand-link {
+    flex: 1;
+    justify-content: center;
   }
 }
