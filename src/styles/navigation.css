@@ -1,11 +1,14 @@
 /* Global Navigation Styles */
 
+/* ============================================================
+   Site Header (sticky bar)
+   ============================================================ */
 .site-header {
   position: sticky;
   top: 0;
   width: 100%;
   height: var(--header-height);
-  background-color: rgba(244, 248, 250, 0.85); /* Matches site background, glassmorphism */
+  background-color: rgba(244, 248, 250, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(226, 232, 240, 0.5);
@@ -22,7 +25,9 @@
   height: 100%;
 }
 
-/* Brand/Logo Styling */
+/* ============================================================
+   Brand / Logo
+   ============================================================ */
 .brand-link {
   font-size: 1.25rem;
   font-weight: 500;
@@ -39,8 +44,10 @@
   margin-left: 0.25rem;
 }
 
-/* Navigation Links - Center List */
-.nav-menu {
+/* ============================================================
+   Desktop nav links
+   ============================================================ */
+.desktop-nav {
   display: flex;
   align-items: center;
   list-style: none;
@@ -66,11 +73,11 @@
   color: var(--color-text-primary);
 }
 
-/* Active State Underline (as shown in design guide for "Installation") */
 .nav-link.active {
   color: var(--color-text-primary);
 }
 
+/* Animated underline indicator */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -94,7 +101,9 @@
   transform-origin: bottom left;
 }
 
-/* Call to Action Button */
+/* ============================================================
+   CTA Button
+   ============================================================ */
 .cta-container {
   display: flex;
   align-items: center;
@@ -119,81 +128,155 @@
   transform: translateY(0);
 }
 
-/* Mobile Toggle Hamburger Button */
+/* ============================================================
+   Mobile hamburger trigger button
+   ============================================================ */
 .mobile-toggle {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 110;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--color-brand-dark);
+  padding: 4px 6px;
+}
+
+/* ============================================================
+   Mobile Popover Drawer  (Popover API — no JS)
+   ============================================================ */
+
+/* Register the custom property so CSS can interpolate the backdrop opacity */
+@property --nav-backdrop {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+#mobile-nav {
+  /* Position & size */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  margin: 0;
   padding: 0;
+
+  /* Appearance */
+  background-color: var(--color-white);
+  box-shadow: 4px 0 30px rgba(0, 0, 0, 0.08);
+  border: none;
+  border-right: 1px solid var(--color-border);
+
+  /* Slide-in animation using the Popover API  */
+  transition:
+    translate 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    display 0.4s ease allow-discrete,
+    overlay 0.4s ease allow-discrete;
+  translate: -280px 0;
 }
 
-.mobile-toggle span {
+#mobile-nav:popover-open {
+  translate: 0 0;
+
+  @starting-style {
+    translate: -280px 0;
+  }
+}
+
+.mobile-nav-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: var(--color-text-muted);
+  line-height: 1;
+  padding: 4px;
+  transition: color var(--transition-smooth);
+}
+
+.mobile-nav-close:hover {
+  color: var(--color-brand-dark);
+}
+
+.mobile-nav-brand {
+  padding: 28px 28px 24px 28px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-nav-brand .brand-link {
+  font-size: 1.1rem;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 28px 28px 40px 28px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobile-nav-list li {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.mobile-nav-list li:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav-link {
   display: block;
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-brand-dark);
-  border-radius: 2px;
-  transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+  padding: 16px 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--transition-smooth);
 }
 
-/* Responsive Mobile Navigation Styles */
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: var(--color-brand-dark);
+}
+
+.mobile-nav-cta {
+  padding-top: 28px;
+  border-bottom: none !important;
+}
+
+.mobile-nav-cta .btn-cta {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+/* ============================================================
+   Screen-reader utility
+   ============================================================ */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* ============================================================
+   Responsive breakpoints
+   ============================================================ */
 @media (max-width: 768px) {
+  /* Hide desktop links, show hamburger button */
+  .desktop-nav {
+    display: none;
+  }
+
   .mobile-toggle {
-    display: flex;
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background-color: var(--color-white);
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.05);
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 100px 40px 40px 40px;
-    gap: 1.75rem;
-    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 105;
-  }
-
-  .nav-menu.is-active {
-    right: 0;
-  }
-
-  .nav-link {
-    font-size: 1.1rem;
-    width: 100%;
-  }
-
-  /* When menu is open, transform hamburger into an X */
-  .mobile-toggle.is-active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .mobile-toggle.is-active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .mobile-toggle.is-active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  .cta-container {
-    margin-top: 1rem;
-    width: 100%;
-  }
-
-  .btn-cta {
-    width: 100%;
-    text-align: center;
+    display: block;
   }
 }
